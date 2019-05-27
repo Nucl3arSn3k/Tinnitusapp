@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MainPersistentTabBar());
+void main() => runApp(MaterialApp(title: "sound beta", home: MainPersistentTabBar()));
 
-class MainPersistentTabBar extends StatelessWidget {
+class MainPersistentTabBar extends StatefulWidget {
+  @override
+  _MainPersistentTabBarState createState() => _MainPersistentTabBarState();
+}
+
+
+class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -17,6 +23,9 @@ class MainPersistentTabBar extends StatelessWidget {
                 Tab(text: "Session 3"),
               ],
             ),
+            actions: <Widget>[],
+
+
             title: Text('App Tab Demo'),
           ),
           body: TabBarView(
