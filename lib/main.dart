@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinnitusapp/Constants.dart';
 
 void main() => runApp(MaterialApp(title: "sound beta", home: MainPersistentTabBar()));
 
@@ -6,7 +7,6 @@ class MainPersistentTabBar extends StatefulWidget {
   @override
   _MainPersistentTabBarState createState() => _MainPersistentTabBarState();
 }
-
 
 class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
   @override
@@ -23,10 +23,24 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
                 Tab(text: "Session 3"),
               ],
             ),
-            actions: <Widget>[],
-
-
             title: Text('App Tab Demo'),
+                              
+            actions: <Widget>[
+              PopupMenuButton<String>(
+                
+                onSelected: choiceAction,
+                itemBuilder: (BuildContext context){
+                  return Constants.choices.map((String choice) { 
+                    return PopupMenuItem<String>(
+                      value: choice,
+                      child: Text(choice),
+                      );
+
+                  }).toList();
+                },
+              
+              )
+            ],
           ),
           body: TabBarView(
             children: <Widget>[
@@ -38,5 +52,10 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
         ),
       ),
     );
+  }
+  void choiceAction(String choice){
+    if (choice == Constants.about){
+      print('Settings');
+    }
   }
 }
