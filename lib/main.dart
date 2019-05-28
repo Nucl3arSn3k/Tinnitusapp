@@ -23,12 +23,13 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
                 Tab(text: "Session 3"),
               ],
             ),
-            title: Text('App Tab Demo'),
+            title: Text('Hearing App '),
+           
                               
             actions: <Widget>[
               PopupMenuButton<String>(
                 
-                onSelected: choiceAction,
+                onSelected: _choiceAction,
                 itemBuilder: (BuildContext context){
                   return Constants.choices.map((String choice) { 
                     return PopupMenuItem<String>(
@@ -53,9 +54,23 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
       ),
     );
   }
-  void choiceAction(String choice){
+  void _choiceAction(String choice){
     if (choice == Constants.about){
-      print('Settings');
+      Navigator.of(context).push(
+      new MaterialPageRoute(
+          builder: (context){
+            return new Scaffold(
+              appBar: new AppBar(
+                title: new Text('About the app'),
+              ),
+              body: new PageView(),
+            );
     }
+  )
+  );
+  }
+
+
+
   }
 }
