@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tinnitusapp/Constants.dart';
+import 'package:ownthetone/Constants.dart';
+import 'package:ownthetone/pages/FirstScreen.dart';
 
 void main() => runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar()));
 
@@ -45,7 +46,7 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
           ),
           body: TabBarView(
             children: <Widget>[
-              Center(child: Text("Sample one")),
+              FirstScreen(),
               Center(child: Text("Sample two")),
               Center(child: Text("Sample three"))
             ],
