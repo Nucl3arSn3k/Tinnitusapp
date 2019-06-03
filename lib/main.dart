@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tinnitusapp/Constants.dart';
 
-void main() => runApp(MaterialApp(title: "sound beta", home: MainPersistentTabBar()));
+void main() => runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar()));
 
 class MainPersistentTabBar extends StatefulWidget {
   @override
@@ -23,7 +23,7 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
                 Tab(text: "Session 3"),
               ],
             ),
-            title: Text('Hearing App '),
+            title: Text('Own The Tone '),
            
                               
             actions: <Widget>[
@@ -72,5 +72,5 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
 
 
 
-  }
+  } 
 }
