@@ -5,6 +5,7 @@ class Constants{
   static const String about = 'About the App';
 
   static const List<String> choices = <String>[
-    about
+    about,
+    settings,
   ];
 }

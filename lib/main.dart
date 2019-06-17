@@ -55,6 +55,7 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
       ),
     );
   }
+  // This area controls the settings menus
   void _choiceAction(String choice){
     if (choice == Constants.about){
       Navigator.of(context).push(
@@ -72,8 +73,37 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
   )
   );
   }
-
-
-
+    else if (choice == Constants.settings){
+      Navigator.of(context).push(
+      new MaterialPageRoute(
+          builder: (context){
+            return new Scaffold(
+              appBar: new AppBar(
+                title: new Text('Settings'),
+              ),
+              body: new Container(
+                child: Center(
+                  child: Text('Tab 1 Layout'),
+                
+                )
+                ),
+              
+              );
+            
+    }
+  )
+  );
   } 
+
+ 
+
+
+  
+
+
+
+
+
+  
+}
 }
