@@ -64,7 +64,9 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
               appBar: new AppBar(
                 title: new Text('About the app'),
               ),
-              body: new PageView(),
+              body: new PageView(
+                
+              ),
             );
     }
   )
