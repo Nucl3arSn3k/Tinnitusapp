@@ -10,9 +10,14 @@ class MainPersistentTabBar extends StatefulWidget {
 }
 
 class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
+  Brightness brightness;
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        ),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -25,7 +30,7 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
               ],
             ),
             title: Text('Own The Tone '),
-           
+            
                               
             actions: <Widget>[
               PopupMenuButton<String>(
@@ -94,16 +99,5 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
   )
   );
   } 
-
- 
-
-
-  
-
-
-
-
-
-  
 }
 }
