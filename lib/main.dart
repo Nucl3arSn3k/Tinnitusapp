@@ -19,14 +19,36 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
         brightness: Brightness.dark,
         ),
       home: DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom:TabBar(
+              isScrollable: true,
               tabs: <Widget>[
-                Tab(text: "Session 1"),
-                Tab(text: "Session 2"),
-                Tab(text: "Session 3"),
+                Container(
+                  width: 90,
+                  height: 40,
+                  alignment: Alignment.center,
+                  child: Text("Session 1"),
+                ),
+                Container(
+                  width: 90,
+                  height: 40,
+                  alignment: Alignment.center,
+                  child: Text("Session 2"),
+                ),
+                Container(
+                  width: 90,
+                  height: 40,
+                  alignment: Alignment.center,
+                  child: Text("Session 3"),
+                ),
+                Container(
+                  width: 90,
+                  height: 40,
+                  alignment: Alignment.center,
+                  child: Text("Session 4"),
+                ),
               ],
             ),
             title: Text('Own The Tone '),
@@ -53,7 +75,8 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
             children: <Widget>[
               FirstScreen(),
               Center(child: Text("Sample two")),
-              Center(child: Text("Sample three"))
+              Center(child: Text("Sample three")),
+              Center(child: Text("Sample four")),
             ],
           ),
         ),
