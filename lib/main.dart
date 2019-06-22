@@ -111,7 +111,7 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
               ),
               body: new Container(
                 child: Center(
-                  child: Text('Tab 1 Layout'),
+                  child: Text('placeholder'),
                 
                 )
                 ),

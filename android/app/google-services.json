@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "899446832516",
+    "firebase_url": "https://own-the-tone.firebaseio.com",
+    "project_id": "own-the-tone",
+    "storage_bucket": "own-the-tone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899446832516:android:06a285b485f828e6",
+        "android_client_info": {
+          "package_name": "com.skelly.ownthetone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899446832516-ri5ohb4hskiitcki9dt0pjdsj6n73lem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBehIunfRRrEmedUr3XIx3x7hW3HtsF_cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899446832516-ri5ohb4hskiitcki9dt0pjdsj6n73lem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
