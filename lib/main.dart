@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ownthetone/Constants.dart';
 import 'package:ownthetone/pages/FirstScreen.dart';
+import 'package:firebase_analytics/observer.dart';
 
-void main() => runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar()));
+void main() =>
+    runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar()));
 
 class MainPersistentTabBar extends StatefulWidget {
   @override
   _MainPersistentTabBarState createState() => _MainPersistentTabBarState();
 }
 
-class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
+class _MainPersistentTabBarState extends State<MainPersistentTabBar> {
   Brightness brightness;
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,12 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
       theme: new ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
-        ),
+      ),
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            bottom:TabBar(
+            bottom: TabBar(
               isScrollable: true,
               tabs: <Widget>[
                 Container(
@@ -52,22 +54,17 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
               ],
             ),
             title: Text('Own The Tone '),
-            
-                              
             actions: <Widget>[
               PopupMenuButton<String>(
-                
                 onSelected: _choiceAction,
-                itemBuilder: (BuildContext context){
-                  return Constants.choices.map((String choice) { 
+                itemBuilder: (BuildContext context) {
+                  return Constants.choices.map((String choice) {
                     return PopupMenuItem<String>(
                       value: choice,
                       child: Text(choice),
-                      );
-
+                    );
                   }).toList();
                 },
-              
               )
             ],
           ),
@@ -83,44 +80,30 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar>{
       ),
     );
   }
+
   // This area controls the settings menus
-  void _choiceAction(String choice){
-    if (choice == Constants.about){
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-          builder: (context){
-            return new Scaffold(
-              appBar: new AppBar(
-                title: new Text('About the app'),
-              ),
-              body: new PageView(
-                
-              ),
-            );
+  void _choiceAction(String choice) {
+    if (choice == Constants.about) {
+      Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+        return new Scaffold(
+          appBar: new AppBar(
+            title: new Text('About the app'),
+          ),
+          body: new PageView(),
+        );
+      }));
+    } else if (choice == Constants.settings) {
+      Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+        return new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Settings'),
+          ),
+          body: new Container(
+              child: Center(
+            child: Text('placeholder'),
+          )),
+        );
+      }));
     }
-  )
-  );
   }
-    else if (choice == Constants.settings){
-      Navigator.of(context).push(
-      new MaterialPageRoute(
-          builder: (context){
-            return new Scaffold(
-              appBar: new AppBar(
-                title: new Text('Settings'),
-              ),
-              body: new Container(
-                child: Center(
-                  child: Text('placeholder'),
-                
-                )
-                ),
-              
-              );
-            
-    }
-  )
-  );
-  } 
-}
 }

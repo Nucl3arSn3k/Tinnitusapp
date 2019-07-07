@@ -1,12 +1,15 @@
 // FirstScreen.dart
 import 'dart:async';
 import 'dart:io';
-
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:ownthetone/player_widget.dart';
+import 'package:path_provider/path_provider.dart';
+
+const flutaud1 = 'https://archive.org/details/flutaud1_20190703';
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -19,13 +22,22 @@ class _FirstScreenState extends State<FirstScreen> {
   String localFilePath;
 
   Future _loadFile() async {
+    final bytes = await readBytes(flutaud1);
     final dir = await getApplicationDocumentsDirectory();
     final file = File('${dir.path}/audio.mp3');
+
+    await file.writeAsBytes(bytes);
+    if (await file.exists()) {
+      setState(() {
+        localFilePath = file.path;
+      });
+    }
   }
 
   Widget _tab(List<Widget> children) {
     return Center(
-      child: Container(
+        child: new Container(
+      child: new SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: children
@@ -33,7 +45,7 @@ class _FirstScreenState extends State<FirstScreen> {
               .toList(),
         ),
       ),
-    );
+    ));
   }
 
   Widget _btn(String txt, VoidCallback onPressed) {
@@ -42,21 +54,18 @@ class _FirstScreenState extends State<FirstScreen> {
         child: RaisedButton(child: Text(txt), onPressed: onPressed));
   }
 
-  
   Widget build(BuildContext context) {
     return _tab([
-      Text('Play Local Asset \'audio1.wav\':'),
-      _btn('Play', () => audioCache.play('audio1.wav')),
-      Text('Loop Local Asset \'audio1.wav\':'),
-      _btn('Loop', () => audioCache.loop('audio1.wav')),
-      Text('Play Local Asset \'audio2.wav\':'),
-      _btn('Play', () => audioCache.play('audio2.wav')),
+      Text(
+        'Sample 1 ($flutaud1)',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      PlayerWidget(url: flutaud1),
+      Text(
+        'Sample 4 (Low Latency mode) ($flutaud1)',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      PlayerWidget(url: flutaud1, mode: PlayerMode.LOW_LATENCY),
     ]);
   }
-
-  
-
-
-
-
-}// TODO Implement this library.
+} // TODO Implement this library.
