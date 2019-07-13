@@ -6,3 +6,8 @@ Anyways Constants.dart contains the constants for the settings menu,aka the popu
 Audio library to port my code to is 
 
 https://pub.dev/packages/audio
+
+
+if that doesn't work 
+
+https://pub.dev/packages/assets_audio_player
