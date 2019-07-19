@@ -34,10 +34,9 @@ class _FirstScreenState extends State<FirstScreen> {
     }
   }
 
-  Widget _tab(List<Widget> children) {
+   Widget _tab(List<Widget> children) {
     return Center(
-        child: new Container(
-      child: new SingleChildScrollView(
+      child: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: children
@@ -45,7 +44,7 @@ class _FirstScreenState extends State<FirstScreen> {
               .toList(),
         ),
       ),
-    ));
+    );
   }
 
   Widget _btn(String txt, VoidCallback onPressed) {
@@ -54,18 +53,29 @@ class _FirstScreenState extends State<FirstScreen> {
         child: RaisedButton(child: Text(txt), onPressed: onPressed));
   }
 
+  
   Widget build(BuildContext context) {
-    return _tab([
-      Text(
-        'Sample 1 ($flutaud1)',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      PlayerWidget(url: flutaud1),
-      Text(
-        'Sample 4 (Low Latency mode) ($flutaud1)',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      PlayerWidget(url: flutaud1, mode: PlayerMode.LOW_LATENCY),
-    ]);
+    return SingleChildScrollView(
+      child: _tab([
+        Text('Play Local Asset \'Waterfall 1000 hz\':'),
+        _btn('Play', () => audioCache.play('waterfall 1000 hz.mp3')),
+        Text('Play Local Asset \'Waterfall 2000 hz\':'),
+        _btn('Loop', () => audioCache.play('waterfall 2000 hz.mp3')),
+        Text('Play Local Asset \'Waterfall 3000 hz\':'),
+        _btn('Play', () => audioCache.play('waterfall 3000 hz.mp3')),
+        Text('Play Local Asset \'Waterfall 4000 hz\':'),
+        _btn('Play', () => audioCache.play('waterfall 4000 hz.mp3')),
+        Text('Play Local Asset \'Waterfall 5000 hz\':'),
+        _btn('Play', () => audioCache.play('waterfall 5000 hz.mp3')),
+        Text('Play Local Asset \'Waterfall 6000 hz\':'),
+        _btn('Play', () => audioCache.play('waterfall 6000 hz.mp3')),
+    ])
+    );
   }
-} // TODO Implement this library.
+
+  
+
+
+
+
+}// TODO Implement this library.
