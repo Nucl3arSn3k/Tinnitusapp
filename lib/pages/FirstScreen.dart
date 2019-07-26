@@ -10,6 +10,11 @@ import 'package:ownthetone/player_widget.dart';
 import 'package:path_provider/path_provider.dart';
 
 const flutaud1 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/093232dd0c4';
+const flutaud2 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/6cf6381994c';
+const flutaud3 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/c0c5e7e7e6c';
+const flutaud4 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/8e72bcde511';
+const flutaud5 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/f5a979a4df8';
+const flutaud6 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/33efed08ae8';
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -63,10 +68,65 @@ class _FirstScreenState extends State<FirstScreen> {
         ),
         PlayerWidget(url: flutaud1),
         Text(
-          'Sample 4 (Low Latency mode) ($flutaud1)',
+          'Sample 1 (Low Latency mode)',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud1, mode: PlayerMode.LOW_LATENCY),
+        //Sample 2
+        Text(
+          'Sample 2',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud2),
+        Text(
+          'Sample 2 (Low Latency mode)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud2, mode: PlayerMode.LOW_LATENCY),
+        //Sample 3
+        Text(
+          'Sample 3',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud3),
+        Text(
+          'Sample 3 (Low Latency mode)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud3, mode: PlayerMode.LOW_LATENCY),
+        //Sample 4
+        Text(
+          'Sample 4',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud4),
+        Text(
+          'Sample 4 (Low Latency mode)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud4, mode: PlayerMode.LOW_LATENCY),
+        //Sample 5
+        Text(
+          'Sample 5',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud5),
+        Text(
+          'Sample 5 (Low Latency mode)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud5, mode: PlayerMode.LOW_LATENCY),
+        //Sample 6
+        Text(
+          'Sample 6',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud6),
+        Text(
+          'Sample 6 (Low Latency mode)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud6, mode: PlayerMode.LOW_LATENCY),
       ])
       );
   }
