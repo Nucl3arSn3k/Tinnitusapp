@@ -25,7 +25,6 @@ dependencies:
   firebase_analytics: ^3.0.3
   cupertino_icons: ^0.1.2
   path_provider: ^1.1.0
-  audio: ^0.0.5
 
 
   
@@ -47,13 +46,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/waterfall 1000 hz.mp3
-    - assets/waterfall 2000 hz.mp3
-    - assets/waterfall 3000 hz.mp3
-    - assets/waterfall 4000 hz.mp3
-    - assets/waterfall 5000 hz.mp3
-    - assets/waterfall 6000 hz.mp3
-
+    - assets/audio1.wav
+    - assets/audio2.wav
+    - assets/images/app_icon.png
 
 
   # To add assets to your application, add an assets section, like this:
