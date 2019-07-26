@@ -9,7 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:ownthetone/player_widget.dart';
 import 'package:path_provider/path_provider.dart';
 
-const flutaud1 = 'https://archive.org/details/flutaud1_20190703';
+const flutaud1 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/093232dd0c4';
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -55,17 +55,19 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   Widget build(BuildContext context) {
-    return _tab([
-      Text(
-        'Sample 1 ($flutaud1)',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      PlayerWidget(url: flutaud1),
-      Text(
-        'Sample 4 (Low Latency mode) ($flutaud1)',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      PlayerWidget(url: flutaud1, mode: PlayerMode.LOW_LATENCY),
-    ]);
+    return SingleChildScrollView(
+      child: _tab([
+        Text(
+          'Sample 1',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud1),
+        Text(
+          'Sample 4 (Low Latency mode) ($flutaud1)',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        PlayerWidget(url: flutaud1, mode: PlayerMode.LOW_LATENCY),
+      ])
+      );
   }
 } // TODO Implement this library.
