@@ -63,37 +63,37 @@ class _FirstScreenState extends State<FirstScreen> {
     return SingleChildScrollView(
       child: _tab([
         Text(
-          'Sample 1',
+          'Waterfall 1000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud1),
         //Sample 2
         Text(
-          'Sample 2',
+          'Waterfall 2000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud2),
         //Sample 3
         Text(
-          'Sample 3',
+          'Waterfall 3000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud3),
         //Sample 4
         Text(
-          'Sample 4',
+          'Waterfall 4000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud4),
         //Sample 5
         Text(
-          'Sample 5',
+          'Waterfall 5000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud5),
         //Sample 6
         Text(
-          'Sample 6',
+          'Waterfall 6000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud6),
