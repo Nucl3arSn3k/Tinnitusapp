@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:ownthetone/Constants.dart';
 import 'package:ownthetone/pages/FirstScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/observer.dart';
+import 'package:ownthetone/splashscreen.dart';
 
 void main() =>
-    runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar()));
+    runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar2()));
 
-class MainPersistentTabBar extends StatefulWidget {
+class MainPersistentTabBar2 extends StatefulWidget {
   @override
-  _MainPersistentTabBarState createState() => _MainPersistentTabBarState();
+  MainPersistentTabBarState2 createState() => MainPersistentTabBarState2();
+  
 }
 
-class _MainPersistentTabBarState extends State<MainPersistentTabBar> {
+
+
+class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
   Brightness brightness;
   @override
   Widget build(BuildContext context) {
@@ -107,3 +112,6 @@ class _MainPersistentTabBarState extends State<MainPersistentTabBar> {
     }
   }
 }
+
+
+
