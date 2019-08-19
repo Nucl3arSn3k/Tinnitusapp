@@ -79,8 +79,7 @@ Widget build(BuildContext context) {
             new MaterialButton(
             child: new Text('Go to Home Page'),
             onPressed: () {
-                Navigator.of(context).pushReplacement(
-                     MaterialPageRoute(builder: (context) => MainPersistentTabBar2()));
+                Navigator.pushNamed(context, '/second');
             },
             )
         ],
