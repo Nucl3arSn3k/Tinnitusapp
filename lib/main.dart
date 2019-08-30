@@ -26,12 +26,10 @@ Future checkFirstSeen() async {
     bool _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-    Navigator.of(context).pushReplacement(
-        new MaterialPageRoute(builder: (context) => new Home()));
+    Navigator.pushNamed(context, '/second');
     } else {
     prefs.setBool('seen', true);
-    Navigator.of(context).pushReplacement(
-        new MaterialPageRoute(builder: (context) => new IntroScreen()));
+    Navigator.pushNamed(context, '/');
     }
 }
 
