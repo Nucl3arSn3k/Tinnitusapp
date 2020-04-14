@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:ownthetone/player_widget.dart';
-import 'package:path_provider/path_provider.dart';
+
 
 const flutaud1 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/093232dd0c4';
 const flutaud2 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/6cf6381994c';

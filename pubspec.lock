@@ -28,7 +28,7 @@ packages:
       name: audioplayers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.1"
+    version: "0.14.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -135,6 +135,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.6"
+  media_notification:
+    dependency: "direct main"
+    description:
+      name: media_notification
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.5"
   meta:
     dependency: transitive
     description:
@@ -295,5 +302,5 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.6.0 <3.0.0"
+  dart: ">=2.4.0 <3.0.0"
   flutter: ">=1.10.0 <2.0.0"
