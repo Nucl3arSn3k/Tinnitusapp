@@ -2,87 +2,74 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'homepage.dart';
+import 'package:ownthetone/UI/homepage.dart';
 
-  
-void main() =>
-    runApp(new MaterialApp(
-      title: "Own the Tone",
-      initialRoute: '/',
-      routes: {
-      '/': (context) => IntroScreen(),
-      '/second': (context) => MainPersistentTabBar2(),
-      }
-      ));
+void main() => runApp(new MaterialApp(
+        title: "TestAudio",
+        initialRoute: '/intro_route',
+        routes: {
+          '/intro_route': (context) => IntroScreen(),
+          '/homescreen_route': (context) => MainPersistentTabBar2(),
+        }));
 
-class Splash extends StatefulWidget {
-@override
-SplashState createState() => new SplashState();
+class IntroScreen extends StatefulWidget {
+  @override
+  IntroScreenstate2 createState() => IntroScreenstate2();
 }
 
-class SplashState extends State<Splash> {
-Future checkFirstSeen() async {
+class IntroScreenstate2 extends State<IntroScreen> {
+  bool buttonstatus = true;
+  Future checkFirstSeen() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool _seen = (prefs.getBool('seen') ?? false);
-
-    if (_seen) {
-    Navigator.pushNamed(context, '/second');
-    } else {
-    prefs.setBool('seen', true);
-    Navigator.pushNamed(context, '/');
+    bool seen = (prefs.getBool('seen') ?? false);
+    prefs.setBool('seen', false);
+    if (buttonstatus == false) {
+      print("If loop is actually running");
+      prefs.setBool('seen', true); 
     }
-}
+    
+    
+    print("SPLASHSTATERUNNINGAHHH");
+    if (seen == true) {
+      Navigator.pushNamed(context, '/homescreen_route');
+      print("Homescreen bound");
+    } else {
+      print("Looping to intro screen");
+    }
+  }
 
-@override
-void initState() {
+  @override
+  void initState() {
     super.initState();
-    new Timer(new Duration(milliseconds: 200), () {
-    checkFirstSeen();
+    new Timer(new Duration(milliseconds: 1), () {
+      print("TIMER ACTIVE");
+      checkFirstSeen();
     });
-}
+  }
 
-@override
-Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return new Scaffold(
-    body: new Center(
-        child: new Text('Loading...'),
-    ),
-    );
-}
-}
-
-class Home extends StatelessWidget {
-@override
-Widget build(BuildContext context) {
-    return new Scaffold(
-    appBar: new AppBar(
-        title: new Text('Hello'),
-    ),
-    body: new Center(
-        child: new Text('This is the second page'),
-    ),
-    );
-}
-}
-
-class IntroScreen extends StatelessWidget {
-@override
-Widget build(BuildContext context) {
-    return new Scaffold(
-    body: new Center(
+      body: new Center(
         child: new Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
             new Text('This is the placeholder for the TOS'),
             new MaterialButton(
-            child: new Text('Go to Home Page'),
-            onPressed: () {
-                Navigator.pushNamed(context, '/second');
-            },
+              child: new Text('Go to Home Page'),
+              onPressed: () {
+                buttonstatus = false;
+                if(buttonstatus != true){
+                  print("Variable set");
+                }
+                print("Button pushed");
+                checkFirstSeen();
+                //Navigator.pushNamed(context, '/homescreen_route');
+              },
             )
-        ],
+          ],
         ),
-    ),
+      ),
     );
-}
+  }
 }

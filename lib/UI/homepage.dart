@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ownthetone/Constants.dart';
+import 'package:ownthetone/UI/Constants.dart';
 import 'package:ownthetone/pages/FirstScreen.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:ownthetone/main.dart';
+
+
 
 void main() =>
     runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar2()));
@@ -86,6 +89,12 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
     );
   }
 
+
+
+
+
+
+
   // This area controls the settings menus
   void _choiceAction(String choice) {
     if (choice == Constants.about) {
@@ -100,6 +109,7 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
     } else if (choice == Constants.settings) {
       Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
         return new Scaffold(
+          
           appBar: new AppBar(
             title: new Text('Settings'),
           ),
@@ -112,6 +122,9 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
     }
   }
 }
+
+
+
 
 
 
