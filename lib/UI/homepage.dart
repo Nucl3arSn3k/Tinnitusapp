@@ -78,7 +78,7 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
           ),
           body: TabBarView(
             children: <Widget>[
-              FirstScreen(),
+              FirstPage(),
               Center(child: Text("Sample two")),
               Center(child: Text("Sample three")),
               Center(child: Text("Sample four")),

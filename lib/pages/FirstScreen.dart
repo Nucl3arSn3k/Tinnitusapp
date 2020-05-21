@@ -16,12 +16,12 @@ const flutaud4 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac1
 const flutaud5 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/f5a979a4df8';
 const flutaud6 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/33efed08ae8';
 
-class FirstScreen extends StatefulWidget {
+class FirstPage extends StatefulWidget {
   @override
   _FirstScreenState createState() => new _FirstScreenState();
 }
 
-class _FirstScreenState extends State<FirstScreen> {
+class _FirstScreenState extends State<FirstPage> {
   AudioPlayer advancedPlayer = AudioPlayer();
   AudioCache audioCache = AudioCache();
   String localFilePath;

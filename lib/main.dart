@@ -1,52 +1,61 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
 import 'package:ownthetone/UI/homepage.dart';
+bool seen;
 
-void main() => runApp(new MaterialApp(
-        title: "TestAudio",
-        initialRoute: '/intro_route',
-        routes: {
-          '/intro_route': (context) => IntroScreen(),
-          '/homescreen_route': (context) => MainPersistentTabBar2(),
-        }));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  seen = await prefs.getBool("seen");
+  await prefs.setBool("seen", true);
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute:
+          seen == false || seen == null ? "/intro_route" : "/homescreen_route",
+      routes: {
+        '/homescreen_route': (context) => MainPersistentTabBar2(),
+        "/intro_route": (context) => IntroScreen(),
+      },
+    );
+  }
+}
+
+
+
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("First Screen"),
+        ),
+        body: Text("First"));
+  }
+}
 
 class IntroScreen extends StatefulWidget {
   @override
-  IntroScreenstate2 createState() => IntroScreenstate2();
+  _IntroScreenState createState() => _IntroScreenState();
 }
 
-class IntroScreenstate2 extends State<IntroScreen> {
-  bool buttonstatus = true;
-  Future checkFirstSeen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool seen = (prefs.getBool('seen') ?? false);
-    prefs.setBool('seen', false);
-    if (buttonstatus == false) {
-      print("If loop is actually running");
-      prefs.setBool('seen', true); 
-    }
-    
-    
-    print("SPLASHSTATERUNNINGAHHH");
-    if (seen == true) {
-      Navigator.pushNamed(context, '/homescreen_route');
-      print("Homescreen bound");
-    } else {
-      print("Looping to intro screen");
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    new Timer(new Duration(milliseconds: 1), () {
-      print("TIMER ACTIVE");
-      checkFirstSeen();
-    });
-  }
-
+class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -58,13 +67,10 @@ class IntroScreenstate2 extends State<IntroScreen> {
             new MaterialButton(
               child: new Text('Go to Home Page'),
               onPressed: () {
-                buttonstatus = false;
-                if(buttonstatus != true){
-                  print("Variable set");
-                }
+                
                 print("Button pushed");
-                checkFirstSeen();
-                //Navigator.pushNamed(context, '/homescreen_route');
+                
+                Navigator.pushNamed(context, '/homescreen_route');
               },
             )
           ],
