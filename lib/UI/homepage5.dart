@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ownthetone/UI/Constants.dart';
-import 'package:ownthetone/pages/0Screen.dart';
-import 'package:ownthetone/pages/1Screen.dart';
+import 'package:ownthetone/pages/5Screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/observer.dart';
@@ -10,9 +9,9 @@ import 'package:ownthetone/main.dart';
 
 
 void main() =>
-    runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar2()));
+    runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar5()));
 
-class MainPersistentTabBar2 extends StatefulWidget {
+class MainPersistentTabBar5 extends StatefulWidget {
   @override
   MainPersistentTabBarState2 createState() => MainPersistentTabBarState2();
   
@@ -20,7 +19,7 @@ class MainPersistentTabBar2 extends StatefulWidget {
 
 
 
-class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
+class MainPersistentTabBarState2 extends State<MainPersistentTabBar5> {
   Brightness brightness;
   @override
   Widget build(BuildContext context) {
@@ -79,7 +78,7 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
           ),
           body: TabBarView(
             children: <Widget>[
-              ZeroPage(),
+              FifthPage(),
               Center(child: Text("Sample two")),
               Center(child: Text("Sample three")),
               Center(child: Text("Sample four")),

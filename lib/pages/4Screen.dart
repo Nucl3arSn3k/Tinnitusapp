@@ -1,4 +1,5 @@
 // FirstScreen.dart
+//This page has 1000 HZ audio
 import 'dart:async';
 import 'dart:io';
 import 'package:audioplayers/audio_cache.dart';
@@ -16,12 +17,12 @@ const flutaud4 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac1
 const flutaud5 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/f5a979a4df8';
 const flutaud6 = 'https://audio.jukehost.co.uk/694139d474ee606401cc3aa8160159ac14662cd8/33efed08ae8';
 
-class FirstPage extends StatefulWidget {
+class FourthPage extends StatefulWidget {
   @override
   _FirstScreenState createState() => new _FirstScreenState();
 }
 
-class _FirstScreenState extends State<FirstPage> {
+class _FirstScreenState extends State<FourthPage> {
   AudioPlayer advancedPlayer = AudioPlayer();
   AudioCache audioCache = AudioCache();
   String localFilePath;
@@ -62,42 +63,13 @@ class _FirstScreenState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: _tab([
-        Text(
-          'Waterfall 1000 HZ',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: flutaud1),
-        //Sample 2
-        Text(
-          'Waterfall 2000 HZ',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: flutaud2),
-        //Sample 3
-        Text(
-          'Waterfall 3000 HZ',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: flutaud3),
         //Sample 4
         Text(
           'Waterfall 4000 HZ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         PlayerWidget(url: flutaud4),
-        //Sample 5
-        Text(
-          'Waterfall 5000 HZ',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: flutaud5),
-        //Sample 6
-        Text(
-          'Waterfall 6000 HZ',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        PlayerWidget(url: flutaud6),
-      ])
+              ])
       );
   }
 } // TODO Implement this library.

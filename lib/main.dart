@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import 'package:ownthetone/UI/homepage.dart';
+import 'package:ownthetone/UI/pickafrequency.dart';
 bool seen;
-
+//Hey you there,if you've decompiled this app,send me a email.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -18,15 +19,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Own The Tone',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute:
-          seen == false || seen == null ? "/intro_route" : "/homescreen_route",
+          seen == false || seen == null ? "/intro_route" : "/audio_selection",
       routes: {
         '/homescreen_route': (context) => MainPersistentTabBar2(),
         "/intro_route": (context) => IntroScreen(),
+        '/audio_selection': (context) => AudioSelection(),
       },
     );
   }
@@ -70,7 +72,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 
                 print("Button pushed");
                 
-                Navigator.pushNamed(context, '/homescreen_route');
+                Navigator.pushNamed(context, '/audio_selection');
               },
             )
           ],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ownthetone/UI/Constants.dart';
-import 'package:ownthetone/pages/0Screen.dart';
-import 'package:ownthetone/pages/1Screen.dart';
+import 'package:ownthetone/pages/2Screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/observer.dart';
@@ -79,7 +78,7 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
           ),
           body: TabBarView(
             children: <Widget>[
-              ZeroPage(),
+              SecondPage(),
               Center(child: Text("Sample two")),
               Center(child: Text("Sample three")),
               Center(child: Text("Sample four")),
