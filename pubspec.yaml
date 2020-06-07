@@ -11,7 +11,7 @@ description: A app that helps with tinnitus
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 0.0.2
+version: 0.1.0
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -28,6 +28,7 @@ dependencies:
   provider: ^3.1.0
   shared_preferences: ^0.5.3+4
   pedantic: ^1.9.0
+  url_launcher: ^5.4.10
 
 dev_dependencies:
   flutter_test:
