@@ -39,7 +39,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   StreamSubscription _playerErrorSubscription;
   StreamSubscription _playerStateSubscription;
 
-  get _isPlaying => _playerState == PlayerState.playing;
+  get _isPlaying => _playerState == PlayerState.playing; //Use a time grabbed to determine isplaying,or based off of position,wait until we lock in a audio dep for sure
   get _isPaused => _playerState == PlayerState.paused;
   get _durationText => _duration?.toString()?.split('.')?.first ?? '';
   get _positionText => _position?.toString()?.split('.')?.first ?? '';

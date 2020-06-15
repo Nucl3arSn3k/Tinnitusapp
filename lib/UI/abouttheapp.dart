@@ -15,13 +15,14 @@ class _Abouttheappstate extends State<AboutTheApp> {
         title: new Text('About The App'),
       ),
       body: new Container(
-          child: Center(
+        child: Center(
         //child: Text('upgrade app'),
         child: RaisedButton(
           onPressed: _launchURL,
           child: new Text('Go to upgrade app'),
         ),
-      )),
+      )
+      ),
     );
   }
   _launchURL() async {

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ownthetone/UI/Constants.dart';
+import 'package:ownthetone/pages/0Screen.dart';
 import 'package:ownthetone/pages/1Screen.dart';
+import 'package:ownthetone/UI/abouttheapp.dart';
+import 'package:ownthetone/UI/settings.dart';
+import 'package:ownthetone/UI/usagestats.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_analytics/observer.dart';
@@ -98,27 +102,11 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar1> {
   // This area controls the settings menus
   void _choiceAction(String choice) {
     if (choice == Constants.about) {
-      Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-        return new Scaffold(
-          appBar: new AppBar(
-            title: new Text('About the app'),
-          ),
-          body: new PageView(),
-        );
-      }));
+      Navigator.push(context,new MaterialPageRoute(builder: (context)=> AboutTheApp()));
     } else if (choice == Constants.settings) {
-      Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-        return new Scaffold(
-          
-          appBar: new AppBar(
-            title: new Text('Settings'),
-          ),
-          body: new Container(
-              child: Center(
-            child: Text('placeholder'),
-          )),
-        );
-      }));
+      Navigator.push(context,new MaterialPageRoute(builder: (context)=> Settings()));
+    } else if (choice == Constants.statistics) {
+      Navigator.push(context,new MaterialPageRoute(builder: (context)=> Stats()));
     }
   }
 }
