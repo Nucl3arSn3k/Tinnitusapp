@@ -10,27 +10,31 @@ class AboutTheApp extends StatefulWidget {
 
 class _Abouttheappstate extends State<AboutTheApp> {
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('About The App'),
-      ),
-      body: new Container(
-        child: Center(
-        //child: Text('upgrade app'),
-        child: RaisedButton(
-          onPressed: _launchURL,
-          child: new Text('Go to upgrade app'),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('About the app'),
         ),
-      )
-      ),
-    );
+        body: Center(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text('This URL is a placeholder for when the premium app version is uploaded'),
+            RaisedButton(
+              onPressed: _launchURL,
+              child: Text('Go to upgrade app'),
+            ),
+          ],
+        )));
   }
+
   _launchURL() async {
-  const url = 'https://flutter.dev';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
+    const url =
+        'https://play.google.com/store/apps/details?id=com.google.android.wearable.app&hl=en_US';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
-}
 }

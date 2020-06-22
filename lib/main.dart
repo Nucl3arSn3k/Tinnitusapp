@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Own The Tone',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
       ),
       initialRoute:
           seen == false || seen == null ? "/intro_route" : "/audio_selection",
