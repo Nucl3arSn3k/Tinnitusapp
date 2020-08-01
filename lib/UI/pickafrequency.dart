@@ -76,7 +76,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud1),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 1000 hz'),
         onPressed: () {
           //buttonstatus = false;
@@ -93,7 +93,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud2),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 2000 hz'),
         onPressed: () {
           //buttonstatus = false;
@@ -107,7 +107,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud3),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 3000 hz'),
         onPressed: () {
           //buttonstatus = false;
@@ -121,7 +121,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud4),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 4000 hz'),
         onPressed: () {
           //buttonstatus = false;
@@ -135,7 +135,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud5),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 5000 hz'),
         onPressed: () {
           //buttonstatus = false;
@@ -149,7 +149,7 @@ class IntroScreenstate2 extends State<AudioSelection> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       PlayerWidget(url: flutaud6),
-      new MaterialButton(
+      new RaisedButton(
         child: new Text('Select 6000 hz'),
         onPressed: () {
           //buttonstatus = false;

@@ -15,11 +15,12 @@ class _Abouttheappstate extends State<AboutTheApp> {
           title: Text('About the app'),
         ),
         body: Center(
-          child: Column(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text('This URL is a placeholder for when the premium app version is uploaded'),
+            Text(
+                'This URL is a placeholder for when the premium app version is uploaded'),
             RaisedButton(
               onPressed: _launchURL,
               child: Text('Go to upgrade app'),
