@@ -17,7 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  audioplayers: ^0.15.1 #old version was ^0.12.0,also grab a android x compatible medianotifications
+  audioplayers: ^0.17.0 #old version was ^0.12.0,also grab a android x compatible medianotifications
   flutter:
     sdk: flutter
   http: 0.12.0+2
