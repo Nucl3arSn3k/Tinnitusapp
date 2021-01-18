@@ -39,7 +39,10 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   StreamSubscription _playerErrorSubscription;
   StreamSubscription _playerStateSubscription;
 
-  get _isPlaying => _playerState == PlayerState.playing; //Use a time grabbed to determine isplaying,or based off of position,wait until we lock in a audio dep for sure
+  get _isPlaying =>
+      _playerState ==
+      PlayerState
+          .playing; //Use a time grabbed to determine isplaying,or based off of position,wait until we lock in a audio dep for sure
   get _isPaused => _playerState == PlayerState.paused;
   get _durationText => _duration?.toString()?.split('.')?.first ?? '';
   get _positionText => _position?.toString()?.split('.')?.first ?? '';
@@ -114,7 +117,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
             new Text(
               _position != null
                   ? '${_positionText ?? ''} / ${_durationText ?? ''}'
-                  : _duration != null ? _durationText : '',
+                  : _duration != null
+                      ? _durationText
+                      : '',
               style: new TextStyle(fontSize: 24.0),
             ),
           ],
