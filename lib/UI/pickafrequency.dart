@@ -98,7 +98,10 @@ class IntroScreenstate2 extends State<AudioSelection> {
         onPressed: () {
           //buttonstatus = false;
           //checkFirstSeen();
-          Navigator.push(context,new MaterialPageRoute(builder: (context)=> MainPersistentTabBar2()));
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => MainPersistentTabBar2()));
         },
       ),
       //Sample 3
@@ -112,7 +115,10 @@ class IntroScreenstate2 extends State<AudioSelection> {
         onPressed: () {
           //buttonstatus = false;
           //checkFirstSeen();
-          Navigator.push(context,new MaterialPageRoute(builder: (context)=> MainPersistentTabBar3()));
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => MainPersistentTabBar3()));
         },
       ),
       //Sample 4
@@ -126,7 +132,10 @@ class IntroScreenstate2 extends State<AudioSelection> {
         onPressed: () {
           //buttonstatus = false;
           //checkFirstSeen();
-          Navigator.push(context,new MaterialPageRoute(builder: (context)=> MainPersistentTabBar4()));
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => MainPersistentTabBar4()));
         },
       ),
       //Sample 5
@@ -140,7 +149,10 @@ class IntroScreenstate2 extends State<AudioSelection> {
         onPressed: () {
           //buttonstatus = false;
           //checkFirstSeen();
-          Navigator.push(context,new MaterialPageRoute(builder: (context)=> MainPersistentTabBar5()));
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (context) => MainPersistentTabBar5()));
         },
       ),
       //Sample 6
@@ -150,7 +162,8 @@ class IntroScreenstate2 extends State<AudioSelection> {
       ),
       PlayerWidget(url: flutaud6),
       new RaisedButton(
-        child: new Text('Select 6000 hz'),
+        child: new Text(
+            'Select 6000 hz'), //This takes you to the debug page with all audio options
         onPressed: () {
           //buttonstatus = false;
           //checkFirstSeen();
