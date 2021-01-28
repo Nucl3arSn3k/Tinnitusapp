@@ -6,10 +6,8 @@ import 'package:ownthetone/UI/abouttheapp.dart';
 import 'package:ownthetone/UI/settings.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:firebase_analytics/observer.dart';
+//import 'package:firebase_analytics/observer.dart';
 import 'package:ownthetone/main.dart';
-
-
 
 void main() =>
     runApp(MaterialApp(title: "Own the Tone", home: MainPersistentTabBar2()));
@@ -17,10 +15,7 @@ void main() =>
 class MainPersistentTabBar2 extends StatefulWidget {
   @override
   MainPersistentTabBarState2 createState() => MainPersistentTabBarState2();
-  
 }
-
-
 
 class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
   Brightness brightness;
@@ -77,7 +72,7 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
                   }).toList();
                 },
               )
-            ],  
+            ],
           ),
           body: TabBarView(
             children: <Widget>[
@@ -92,24 +87,14 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar2> {
     );
   }
 
-
-
-
-
-
-
   // This area controls the settings menus
   void _choiceAction(String choice) {
     if (choice == Constants.about) {
-      Navigator.push(context,new MaterialPageRoute(builder: (context)=> AboutTheApp()));
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => AboutTheApp()));
     } else if (choice == Constants.settings) {
-      Navigator.push(context,new MaterialPageRoute(builder: (context)=> Settings()));
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => Settings()));
     }
   }
 }
-
-
-
-
-
-

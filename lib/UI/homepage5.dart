@@ -7,7 +7,7 @@ import 'package:ownthetone/UI/settings.dart';
 import 'package:ownthetone/UI/usagestats.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:firebase_analytics/observer.dart';
+//import 'package:firebase_analytics/observer.dart';
 import 'package:ownthetone/main.dart';
 
 void main() =>
@@ -16,10 +16,7 @@ void main() =>
 class MainPersistentTabBar5 extends StatefulWidget {
   @override
   MainPersistentTabBarState2 createState() => MainPersistentTabBarState2();
-  
 }
-
-
 
 class MainPersistentTabBarState2 extends State<MainPersistentTabBar5> {
   Brightness brightness;
@@ -91,26 +88,17 @@ class MainPersistentTabBarState2 extends State<MainPersistentTabBar5> {
     );
   }
 
-
-
-
-
-
-
   // This area controls the settings menus
   void _choiceAction(String choice) {
     if (choice == Constants.about) {
-      Navigator.push(context,new MaterialPageRoute(builder: (context)=> AboutTheApp()));
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => AboutTheApp()));
     } else if (choice == Constants.settings) {
-      Navigator.push(context,new MaterialPageRoute(builder: (context)=> Settings()));
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => Settings()));
     } else if (choice == Constants.statistics) {
-      Navigator.push(context,new MaterialPageRoute(builder: (context)=> Stats()));
+      Navigator.push(
+          context, new MaterialPageRoute(builder: (context) => Stats()));
     }
   }
 }
-
-
-
-
-
-
